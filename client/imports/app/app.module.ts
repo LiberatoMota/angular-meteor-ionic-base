@@ -1,29 +1,36 @@
 import { NgModule } from "@angular/core";
+import { IonicApp, IonicModule } from 'ionic-angular';
 import { BrowserModule } from "@angular/platform-browser";
 import { AppComponent } from "./app.component";
-import { DemoComponent } from "./demo/demo.component";
-import { DemoDataService } from "./demo/demo-data.service";
+import { MainComponent } from "./main/main.component";
+import { AccountsModule } from 'angular2-meteor-accounts-ui';
+
 
 @NgModule({
   // Components, Pipes, Directive
   declarations: [
     AppComponent,
-    DemoComponent
+    MainComponent
   ],
   // Entry Components
   entryComponents: [
-    AppComponent
+    AppComponent,
+    MainComponent
   ],
   // Providers
   providers: [
-    DemoDataService
+    //DemoDataService
   ],
   // Modules
   imports: [
-    BrowserModule
+    IonicModule.forRoot(AppComponent, {
+      mode: 'ios',
+    }),
+    BrowserModule,
+    AccountsModule
   ],
   // Main Component
-  bootstrap: [ AppComponent ]
+  bootstrap: [IonicApp]
 })
 export class AppModule {
   constructor() {
