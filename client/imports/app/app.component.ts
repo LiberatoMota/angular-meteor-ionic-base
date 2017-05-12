@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Title } from '@angular/platform-browser';
-import { Platform } from 'ionic-angular';
-//import { StatusBar } from 'ionic-native';
+import { App, Platform, NavController, MenuController } from 'ionic-angular';
+import { StatusBar, Splashscreen } from 'ionic-native';
 import { Meteor } from 'meteor/meteor';
 import { InjectUser } from 'angular2-meteor-accounts-ui';
 import { MeteorObservable } from 'meteor-rxjs';
@@ -9,6 +9,7 @@ import template from "./app.component.html";
 import style from "./app.component.scss";
 
 import { MainComponent } from "./main/main.component";
+import { SigninComponent } from "./auth/signin.component";
 
 @InjectUser('user')
 @Component({
@@ -20,7 +21,11 @@ export class AppComponent implements OnInit {
   rootPage: any;
   user = Meteor.user();
 
-  constructor(platform: Platform, private title: Title) {
+  constructor(
+    platform: Platform, 
+    private _appCtrl: App,
+    public menuCtrl: MenuController
+    ) {
     this.rootPage =  MainComponent;
   }
 
@@ -32,6 +37,21 @@ export class AppComponent implements OnInit {
       console.log(this.user);
     });
     
+  }
+
+  goToPage(page:string){
+    console.log("page",page);
+    this.menuCtrl.close();
+    let destination;
+    switch (page) {
+      case 'signin':
+        destination = SigninComponent;
+        break;
+      default:
+      destination = MainComponent;
+        break;
+    }
+    this._appCtrl.getRootNav().push(destination);
   }
 
   

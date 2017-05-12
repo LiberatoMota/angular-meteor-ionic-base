@@ -3,14 +3,16 @@
     <ion-menu [content]="content">
         <ion-header>
             <ion-toolbar>
-                <ion-title>Pages</ion-title>
+                <ion-title>Menu</ion-title>
             </ion-toolbar>
         </ion-header>
         <ion-content>
             <ion-list>
-                <button ion-item> Login </button>
+                
+                <button ion-item (click)="goToPage('signin')"> Login </button>
                 <button ion-item> Signup </button>
             </ion-list>
+            
         </ion-content>
     </ion-menu>
 
