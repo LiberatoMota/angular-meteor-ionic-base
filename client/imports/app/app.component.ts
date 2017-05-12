@@ -33,6 +33,9 @@ export class AppComponent implements OnInit {
     console.log(this.user);
     
     MeteorObservable.autorun().subscribe(() => {
+      if (Meteor.loggingIn()) {
+        return;
+      }
       this.user = Meteor.user();
       console.log(this.user);
     });

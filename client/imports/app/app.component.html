@@ -8,11 +8,21 @@
         </ion-header>
         <ion-content>
             <ion-list>
-                
-                <button ion-item (click)="goToPage('signin')"> Login </button>
+
+                <ion-item *ngIf="user; else login">
+                    <ion-avatar item-left>
+                        <img src="#">
+                    </ion-avatar>
+                    <h2>{{user.username}}</h2>
+                    <p>{{user.emails[0].adress}}</p>
+                </ion-item>
+
+                <ng-template #login >
+                    <button ion-item (click)="goToPage('signin')"> Login </button>
+                </ng-template>
                 <button ion-item> Signup </button>
             </ion-list>
-            
+
         </ion-content>
     </ion-menu>
 
