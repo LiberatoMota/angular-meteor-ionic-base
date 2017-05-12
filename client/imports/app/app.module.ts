@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
-import { IonicApp, IonicModule } from 'ionic-angular';
+import { IonicApp, IonicModule } from "ionic-angular";
+//import { StatusBar, SplashScreen } from "ionic-native";
 import { BrowserModule } from "@angular/platform-browser";
 import { AppComponent } from "./app.component";
 import { MainComponent } from "./main/main.component";
@@ -19,7 +20,7 @@ import { AccountsModule } from 'angular2-meteor-accounts-ui';
   ],
   // Providers
   providers: [
-    //DemoDataService
+  //DemoDataService
   ],
   // Modules
   imports: [

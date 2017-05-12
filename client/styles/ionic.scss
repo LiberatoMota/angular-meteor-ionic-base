@@ -35,6 +35,12 @@ $colors: (
 // --------------------------------------------------
 
 @import
+"{}/node_modules/ionic-angular/components/split-pane/split-pane",
+"{}/node_modules/ionic-angular/components/split-pane/split-pane.ios",
+"{}/node_modules/ionic-angular/components/split-pane/split-pane.md",
+"{}/node_modules/ionic-angular/components/split-pane/split-pane.wp";
+
+@import
 "{}/node_modules/ionic-angular/components/action-sheet/action-sheet",
 "{}/node_modules/ionic-angular/components/action-sheet/action-sheet.ios",
 "{}/node_modules/ionic-angular/components/action-sheet/action-sheet.md",
