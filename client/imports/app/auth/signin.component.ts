@@ -1,24 +1,13 @@
-import {
-    Component,
-    OnInit
-} from "@angular/core";
-import {
-    Keyboard,
-    LoadingController
-} from 'ionic-angular';
-import {
-    FormBuilder,
-    FormGroup,
-    Validators
-} from '@angular/forms';
+import {    Component,    OnInit} from "@angular/core";
+import { Keyboard,LoadingController} from 'ionic-angular';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import template from "./signin.component.html";
 import style from "./signin.component.scss";
-import {
-    Meteor
-} from 'meteor/meteor';
-import {
-    Accounts
-} from 'meteor/accounts-base';
+import {    Meteor} from 'meteor/meteor';
+import {Accounts} from 'meteor/accounts-base';
+import * as faker from 'faker';
+
+
 
 @Component({
     selector: "signin",
@@ -82,7 +71,11 @@ export class SigninComponent implements OnInit {
         const options = {
             username: this.signupForm.value.username,
             email: this.signupForm.value.email,
-            password: this.signupForm.value.password
+            password: this.signupForm.value.password,
+            profile:{
+                avatar: faker.fake("{{internet.avatar}}")
+            }
+            
         }
 
         Accounts.createUser(options, (error)=>{

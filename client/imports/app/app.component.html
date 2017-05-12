@@ -11,7 +11,7 @@
 
                 <ion-item *ngIf="user; else login">
                     <ion-avatar item-left>
-                        <img src="#">
+                        <img src="{{user.profile.avatar}}">
                     </ion-avatar>
                     <h2>{{user.username}}</h2>
                     <p>{{user.emails[0].adress}}</p>
