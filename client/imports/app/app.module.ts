@@ -5,7 +5,8 @@ import { BrowserModule } from "@angular/platform-browser";
 import { AppComponent } from "./app.component";
 import { MainComponent } from "./main/main.component";
 import { AccountsModule } from 'angular2-meteor-accounts-ui';
-import { SIGNIN_DECLARATIONS } from './auth'
+import { AUTH_DECLARATIONS } from './auth'
+import { USER_DECLARATIONS } from './user'
 
 
 @NgModule({
@@ -13,13 +14,15 @@ import { SIGNIN_DECLARATIONS } from './auth'
   declarations: [
     AppComponent,
     MainComponent,
-    ...SIGNIN_DECLARATIONS
+    ...USER_DECLARATIONS,
+    ...AUTH_DECLARATIONS,
   ],
   // Entry Components
   entryComponents: [
     AppComponent,
     MainComponent,
-    ...SIGNIN_DECLARATIONS
+    ...USER_DECLARATIONS,
+    ...AUTH_DECLARATIONS
   ],
   // Providers
   providers: [

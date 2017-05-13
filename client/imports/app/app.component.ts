@@ -10,6 +10,7 @@ import style from "./app.component.scss";
 
 import { MainComponent } from "./main/main.component";
 import { SigninComponent } from "./auth/signin.component";
+import { ProfileComponent } from "./user/profile.component";
 
 @InjectUser('user')
 @Component({
@@ -49,6 +50,9 @@ export class AppComponent implements OnInit {
     switch (page) {
       case 'signin':
         destination = SigninComponent;
+        break;
+     case 'userProfile':
+        destination = userProfile;
         break;
       default:
       destination = MainComponent;
